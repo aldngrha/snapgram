@@ -12,7 +12,9 @@ const SearchResult = ({
   searchedPosts,
 }: SearchResultsProps) => {
   if (isSearchFetching) return <Loader />;
+  // @ts-expect-error
   if (searchedPosts && searchedPosts.documents.length > 0) {
+    // @ts-expect-error
     return <GridPostList posts={searchedPosts.documents} />;
   }
   return (

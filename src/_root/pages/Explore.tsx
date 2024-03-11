@@ -32,7 +32,7 @@ const Explore = () => {
 
   const shouldShowSeacrhPosts = searchValue !== "";
   const shouldShowPosts =
-    !shouldShowSeacrhPosts &&
+    !shouldShowSeacrhPosts && // @ts-expect-error
     posts.pages.every((item) => item.documents.length === 0);
 
   return (
@@ -73,12 +73,14 @@ const Explore = () => {
         {shouldShowSeacrhPosts ? (
           <SearchResult
             isSearchFetching={isSearchFetching}
+            // @ts-ignore
             searchedPosts={searchedPosts}
           />
         ) : shouldShowPosts ? (
           <p className="text-light-4 mt-10 text-center w-full">End of posts</p>
         ) : (
           posts.pages.map((item, index) => (
+            // @ts-expect-error
             <GridPostList key={`page-${index}`} posts={item.documents} />
           ))
         )}

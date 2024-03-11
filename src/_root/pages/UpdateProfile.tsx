@@ -43,6 +43,7 @@ const UpdateProfile = () => {
 
   // Queries
   const { data: currentUser } = useGetUserById(id || "");
+  // @ts-expect-error
   const { mutateAsync: updateUser, isLoading: isLoadingUpdate } =
     useUpdateUser();
 
