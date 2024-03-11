@@ -144,7 +144,7 @@
   }
 
   .home-creators {
-    @apply hidden xl:flex flex-col w-72 2xl:w-465 px-6 py-10 gap-10  overflow-scroll custom-scrollbar;
+    @apply hidden xl:flex flex-col w-72 2xl:w-465 px-6 py-10 gap-10 overflow-scroll custom-scrollbar;
   }
 
   /* Post Details */
@@ -219,14 +219,7 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
-    overflow-y: scroll; /* Mengizinkan scroll vertikal */
-    scrollbar-width: none; /* Menghilangkan lebar scrollbar */
-    -ms-overflow-style: none;
-  }
-
-  .leftsidebar::-webkit-scrollbar {
-    display: none; /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
+    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2 overflow-scroll custom-scrollbar;
   }
 
   .leftsidebar-link {
